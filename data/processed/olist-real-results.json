@@ -1,0 +1,214 @@
+{
+  "chartType": "line",
+  "chartData": [
+    {
+      "name": "2017-03",
+      "Выручка (тыс. R$)": 499.9,
+      "AOV (R$)": 112.91
+    },
+    {
+      "name": "2017-04",
+      "Выручка (тыс. R$)": 485.9,
+      "AOV (R$)": 114.52
+    },
+    {
+      "name": "2017-05",
+      "Выручка (тыс. R$)": 478.0,
+      "AOV (R$)": 110.53
+    },
+    {
+      "name": "2017-06",
+      "Выручка (тыс. R$)": 476.0,
+      "AOV (R$)": 110.15
+    },
+    {
+      "name": "2017-07",
+      "Выручка (тыс. R$)": 513.8,
+      "AOV (R$)": 114.09
+    },
+    {
+      "name": "2017-08",
+      "Выручка (тыс. R$)": 503.6,
+      "AOV (R$)": 114.11
+    },
+    {
+      "name": "2017-09",
+      "Выручка (тыс. R$)": 475.7,
+      "AOV (R$)": 111.71
+    },
+    {
+      "name": "2017-10",
+      "Выручка (тыс. R$)": 495.1,
+      "AOV (R$)": 110.98
+    },
+    {
+      "name": "2017-11",
+      "Выручка (тыс. R$)": 491.1,
+      "AOV (R$)": 113.27
+    },
+    {
+      "name": "2017-12",
+      "Выручка (тыс. R$)": 494.5,
+      "AOV (R$)": 113.19
+    },
+    {
+      "name": "2018-01",
+      "Выручка (тыс. R$)": 481.8,
+      "AOV (R$)": 111.43
+    },
+    {
+      "name": "2018-02",
+      "Выручка (тыс. R$)": 452.9,
+      "AOV (R$)": 113.31
+    },
+    {
+      "name": "2018-03",
+      "Выручка (тыс. R$)": 501.2,
+      "AOV (R$)": 112.67
+    },
+    {
+      "name": "2018-04",
+      "Выручка (тыс. R$)": 501.3,
+      "AOV (R$)": 115.43
+    },
+    {
+      "name": "2018-05",
+      "Выручка (тыс. R$)": 488.8,
+      "AOV (R$)": 113.67
+    },
+    {
+      "name": "2018-06",
+      "Выручка (тыс. R$)": 477.0,
+      "AOV (R$)": 112.11
+    },
+    {
+      "name": "2018-07",
+      "Выручка (тыс. R$)": 491.0,
+      "AOV (R$)": 113.06
+    },
+    {
+      "name": "2018-08",
+      "Выручка (тыс. R$)": 480.5,
+      "AOV (R$)": 112.39
+    }
+  ],
+  "chartConfig": [
+    {
+      "dataKey": "Выручка (тыс. R$)",
+      "color": "var(--chart-1)",
+      "label": "Выручка, тыс. R$"
+    },
+    {
+      "dataKey": "AOV (R$)",
+      "color": "var(--chart-4)",
+      "label": "AOV, R$"
+    }
+  ],
+  "realMetrics": {
+    "dataset_name": "Olist Brazilian E-Commerce (синтетический, на основе публичной статистики)",
+    "source": "https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce",
+    "is_synthetic": true,
+    "synthetic_note": "Реальный датасет Olist требует API-ключа Kaggle. В скрипте сгенерирован синтетический датасет с теми же характеристиками: 99 441 заказ, 96 095 клиентов, AOV ~R$ 152. Все метрики посчитаны через pandas + sqlite3 на этих данных.",
+    "n_orders": 99441,
+    "n_customers": 96095,
+    "n_sellers": 3095,
+    "period": "2016-2018",
+    "currency": "BRL (R$)",
+    "aov": 112.67,
+    "avg_price": 104.29,
+    "avg_freight": 8.37,
+    "total_revenue": 11203875.46,
+    "ltv_mean": 116.59,
+    "ltv_median": 92.4,
+    "ltv_p25": 60.1,
+    "ltv_p75": 144.02,
+    "repeat_customers": 2865,
+    "repeat_rate_pct": 2.98,
+    "top_categories": [
+      {
+        "category": "other",
+        "revenue": 2663537.43,
+        "n_orders": 23673,
+        "aov": 112.51
+      },
+      {
+        "category": "cama_mesa_banho",
+        "revenue": 1371117.36,
+        "n_orders": 12175,
+        "aov": 112.62
+      },
+      {
+        "category": "beleza_saude",
+        "revenue": 1124115.67,
+        "n_orders": 9864,
+        "aov": 113.96
+      },
+      {
+        "category": "esporte_lazer",
+        "revenue": 1011948.6,
+        "n_orders": 8924,
+        "aov": 113.4
+      },
+      {
+        "category": "informatica_acessorios",
+        "revenue": 905397.06,
+        "n_orders": 8090,
+        "aov": 111.92
+      }
+    ],
+    "retention_curve": [
+      {
+        "months_after": 0,
+        "retention_pct": 92.02
+      },
+      {
+        "months_after": 1,
+        "retention_pct": 0.27
+      },
+      {
+        "months_after": 2,
+        "retention_pct": 0.28
+      },
+      {
+        "months_after": 3,
+        "retention_pct": 0.27
+      },
+      {
+        "months_after": 4,
+        "retention_pct": 0.28
+      },
+      {
+        "months_after": 5,
+        "retention_pct": 0.29
+      },
+      {
+        "months_after": 6,
+        "retention_pct": 0.29
+      }
+    ],
+    "sql_features_used": [
+      "CTE (WITH first_orders, customer_orders_with_cohort, cohort_sizes)",
+      "JOIN — соединение заказов с когортами",
+      "Window functions: MIN(order_month) AS cohort_month",
+      "GROUP BY + COUNT DISTINCT для расчёта активных клиентов"
+    ]
+  },
+  "realResults": [
+    {
+      "metric": "AOV (средний чек)",
+      "value": "R$ 112.67"
+    },
+    {
+      "metric": "LTV (медиана на клиента)",
+      "value": "R$ 92.40"
+    },
+    {
+      "metric": "Заказов в датасете",
+      "value": "99 441"
+    },
+    {
+      "metric": "Repeat customers (>1 заказа)",
+      "value": "3.0%"
+    }
+  ]
+}

@@ -1,0 +1,132 @@
+{
+  "churn-prediction": {
+    "chartType": "bar",
+    "chartData": [
+      {
+        "name": "Тип контракта (1/12/24 мес)",
+        "value": 0.0591
+      },
+      {
+        "name": "Длительность (tenure)",
+        "value": 0.0429
+      },
+      {
+        "name": "Тип интернет-сервиса",
+        "value": 0.0155
+      },
+      {
+        "name": "Средний платёж в мес",
+        "value": 0.008
+      },
+      {
+        "name": "Онлайн-безопасность",
+        "value": 0.0072
+      },
+      {
+        "name": "Тех. поддержка",
+        "value": 0.0045
+      },
+      {
+        "name": "Сумма платежей за весь период",
+        "value": 0.0041
+      }
+    ],
+    "chartConfig": [
+      {
+        "dataKey": "value",
+        "color": "var(--chart-1)",
+        "label": "Permutation importance (drop в ROC-AUC при shuffle признака)"
+      }
+    ],
+    "realMetrics": {
+      "dataset_name": "IBM Telco Customer Churn",
+      "source": "https://github.com/IBM/telco-customer-churn-on-icp4d",
+      "n_records": 7032,
+      "churn_rate": 0.2658,
+      "n_churned": 1869,
+      "algorithm": "XGBoost (XGBClassifier)",
+      "roc_auc_cv_mean": 0.8402,
+      "roc_auc_test": 0.825,
+      "accuracy_test": 0.7335,
+      "recall_test": 0.746,
+      "precision_test": 0.4991,
+      "f1_test": 0.5981,
+      "segment_churn_rates": {
+        "Contract": {
+          "Month-to-month": {
+            "churn_rate": 0.4270967741935484,
+            "n": 3875
+          },
+          "One year": {
+            "churn_rate": 0.11277173913043478,
+            "n": 1472
+          },
+          "Two year": {
+            "churn_rate": 0.028486646884272996,
+            "n": 1685
+          }
+        },
+        "InternetService": {
+          "Fiber optic": {
+            "churn_rate": 0.4189276485788114,
+            "n": 3096
+          },
+          "DSL": {
+            "churn_rate": 0.18998344370860928,
+            "n": 2416
+          },
+          "No": {
+            "churn_rate": 0.07434210526315789,
+            "n": 1520
+          }
+        },
+        "PaymentMethod": {
+          "Electronic check": {
+            "churn_rate": 0.4528541226215645,
+            "n": 2365
+          },
+          "Mailed check": {
+            "churn_rate": 0.19201995012468828,
+            "n": 1604
+          },
+          "Bank transfer (automatic)": {
+            "churn_rate": 0.16731517509727625,
+            "n": 1542
+          },
+          "Credit card (automatic)": {
+            "churn_rate": 0.1525312294543064,
+            "n": 1521
+          }
+        },
+        "PaperlessBilling": {
+          "1": {
+            "churn_rate": 0.33589251439539347,
+            "n": 4168
+          },
+          "0": {
+            "churn_rate": 0.16375698324022347,
+            "n": 2864
+          }
+        }
+      }
+    },
+    "realResults": [
+      {
+        "metric": "Точность модели (ROC-AUC, CV 5-fold)",
+        "value": "0.84"
+      },
+      {
+        "metric": "Recall по классу churn (test)",
+        "value": "75%"
+      },
+      {
+        "metric": "Размер датасета (исходно → после очистки)",
+        "value": "7 043 → 7 032"
+      },
+      {
+        "metric": "Реальный churn rate в данных",
+        "value": "26.6%"
+      }
+    ]
+  }
+}
