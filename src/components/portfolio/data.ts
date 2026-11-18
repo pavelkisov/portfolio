@@ -16,7 +16,7 @@ export const profile = {
   email: "kisovpavel255@gmail.com",
   phone: "",
   summary:
-    "Data Analyst с фокусом на реальных открытых датасетах и измеримых результатах. Специализируюсь на SQL-аналитике (Retention, LTV, AOV), визуализации в Tableau и Power BI, ML-моделях для прогнозирования оттока. Запустил 3 сквозных аналитических исследования на данных e-commerce и маркетплейсов. Привык работать с настоящими данными, считать статистику (p-value, t-test) и принимать решения на основе цифр, а не интуиции.",
+    "Data Analyst с фокусом на реальных открытых датасетах и измеримых результатах. Специализируюсь на SQL-аналитике (Retention, LTV, AOV), визуализации в Tableau и Power BI, ML-моделях для прогнозирования оттока. Запустил 3 сквозных аналитических исследования на открытых данных (телеком, e-commerce) и в A/B-тесте. Привык работать с настоящими данными, считать статистику (p-value, t-test) и принимать решения на основе цифр, а не интуиции.",
   resumeUrl: "#",
   socials: {
     github: "https://github.com/pavelkisov",
@@ -31,7 +31,7 @@ export const profile = {
 };
 
 export const heroStats = [
-  { value: "3", label: "сквозных pet-проекта на реальных данных" },
+  { value: "3", label: "сквозных pet-проекта (2 — на реальных датасетах)" },
   { value: "0.84", label: "ROC-AUC на churn (реальный)" },
   { value: "7 043 → 7 032", label: "записей в Telco (исходно → после очистки)" },
   { value: "МФТИ", label: "самостоятельное изучение курса по аналитике данных" },
@@ -172,7 +172,7 @@ export const projects: ProjectMeta[] = [
       { metric: "Реальный churn rate", value: "26.6%" },
     ],
     githubUrl: "https://github.com/pavelkisov/telco-churn",
-    year: "2024",
+    year: "2026",
     isReal: true,
     realMetricsNote:
       "Реальные результаты на датасете IBM Telco. Источник: github.com/IBM/telco-customer-churn-on-icp4d. Скрипт: scripts/churn_analysis.py",
@@ -182,34 +182,34 @@ export const projects: ProjectMeta[] = [
     title: "Анализ продуктовых метрик Olist (РЕАЛЬНОЕ)",
     category: "Python · SQL · E-commerce",
     shortDescription:
-      "Сквозная аналитика на датасете Olist Brazilian E-Commerce (99 441 заказ). AOV, LTV, когортный Retention через pandas + sqlite3 (CTE, Window functions, JOIN).",
+      "Сквозная аналитика на реальном датасете Olist Brazilian E-Commerce (99 440 заказов с оплатой). AOV, LTV, когортный Retention через pandas + sqlite3 (CTE, Window functions, JOIN).",
     problem:
       "Нужно посчитать базовые продуктовые метрики e-commerce-платформы: средний чек (AOV), LTV на клиента, когортный Retention. Olist — крупнейший бразильский маркетплейс, его открытый датасет содержит 99 441 заказ и 96 095 клиентов за 2016-2018 годы.",
     approach:
-      "Загрузил данные в pandas, залил в in-memory SQLite. Написал сложные SQL-запросы: AOV через агрегаты (SUM, AVG, COUNT DISTINCT), LTV через CTE с GROUP BY customer_id и SUM(order_total), когортный Retention через 3 CTE: first_orders (MIN order_month как когорта), customer_orders_with_cohort (JOIN заказов с когортами), cohort_active (COUNT DISTINCT по месяцам). Retention = active_customers / cohort_size.",
+      "Скачал реальный датасет с Kaggle одной командой (kagglehub, без API-ключа), загрузил в pandas, залил в in-memory SQLite. Написал сложные SQL-запросы: AOV через агрегаты (SUM, AVG, COUNT DISTINCT), LTV через CTE с GROUP BY customer_id и SUM(order_total), когортный Retention через 3 CTE: first_orders (MIN order_month как когорта), customer_orders_with_cohort (JOIN заказов с когортами), cohort_active (COUNT DISTINCT по месяцам). Retention = active_customers / cohort_size.",
     tools: ["Python", "pandas", "sqlite3", "SQL (CTE, Window functions, JOIN)", "numpy"],
     results: [
-      { metric: "AOV (средний чек)", value: "R$ 112.67" },
-      { metric: "LTV (медиана на клиента)", value: "R$ 92.40" },
-      { metric: "Заказов в датасете", value: "99 441" },
-      { metric: "Repeat customers", value: "2.98%" },
+      { metric: "AOV (средний чек)", value: "R$ 160.99" },
+      { metric: "LTV (медиана на клиента)", value: "R$ 108.00" },
+      { metric: "Заказов в датасете", value: "99 440" },
+      { metric: "Repeat customers", value: "3.12%" },
     ],
     githubUrl: "https://github.com/pavelkisov/olist-analysis",
-    year: "2024",
+    year: "2026",
     isReal: true,
     realMetricsNote:
-      "Реальные результаты на синтетическом датасете с характеристиками Olist (Kaggle требует API-ключ). 99 441 заказ, 96 095 клиентов. Скрипт: scripts/olist_analysis.py. Источник характеристик: kaggle.com/datasets/olistbr/brazilian-ecommerce",
+      "Реальные результаты на датасете Olist Brazilian E-Commerce с Kaggle: 99 440 заказов с оплатой, 96 095 клиентов. Данные скачиваются одной командой через kagglehub (без API-ключа). Скрипт: scripts/olist_analysis.py",
   },
   {
     id: "ab-test-platform",
-    title: "A/B-тест нового алгоритма рекомендаций (РЕАЛЬНОЕ)",
+    title: "A/B-тест нового алгоритма рекомендаций (СИНТЕТИКА)",
     category: "Статистика · Product",
     shortDescription:
-      "A/B-тест на 10 000 пользователей: t-test, p-value, доверительные интервалы, Cohen's h через scipy.stats. B значимо лучше A (p=0.0044).",
+      "A/B-тест на 10 000 пользователей: z-test для пропорций (основной) + Welch's t-test (перекрёстная проверка), 95% CI, Cohen's h через scipy.stats. B значимо лучше A (p=0.0044).",
     problem:
       "Нужно оценить, даёт ли новый алгоритм рекомендаций статистически значимый прирост конверсии в покупку по сравнению со старым лендингом. Размер групп: 5 000 + 5 000 пользователей. Метрика — бинарная конверсия (0/1).",
     approach:
-      "Сгенерировал синтетические данные через numpy.random.binomial с seed=42 (Kaggle-датасеты требуют API-ключ). Посчитал конверсии в группах A (4.20%) и B (5.42%). Применил Welch's t-test через scipy.stats.ttest_ind (equal_var=False) — корректно для бинарных данных. Также посчитал z-test для пропорций, 95% доверительный интервал (Wald), effect size (Cohen's h). Вывод: p=0.0044 < α=0.05 → значимо.",
+      "Реальные данные A/B-тестов компаний не публикуются, поэтому данные сгенерированы через numpy.random.binomial с seed=42 (воспроизводимо). Посчитал конверсии в группах A (4.20%) и B (5.42%). Основной метод — z-test для пропорций; перекрёстная проверка — Welch's t-test через scipy.stats.ttest_ind (equal_var=False). Также посчитал 95% доверительный интервал (Wald) и effect size (Cohen's h). Вывод: p=0.0044 < α=0.05 → значимо, но эффект мал — решение за практической значимостью.",
     tools: ["Python", "scipy.stats", "numpy", "t-test", "p-value", "Cohen's h"],
     results: [
       { metric: "P-value (двухсторонний)", value: "0.0044" },
@@ -218,10 +218,10 @@ export const projects: ProjectMeta[] = [
       { metric: "Статистическая значимость", value: "Значимо (p < 0.05)" },
     ],
     githubUrl: "https://github.com/pavelkisov/ab-test-analysis",
-    year: "2024",
-    isReal: true,
+    year: "2026",
+    isReal: false,
     realMetricsNote:
-      "Реальные статистические расчёты на синтетических данных (numpy seed=42, 5 000+5 000 пользователей). Welch's t-test + z-test + 95% CI + Cohen's h. Скрипт: scripts/ab_test_analysis.py",
+      "Метод боевой, данные учебные: расчёты на синтетических данных (numpy seed=42, 5 000+5 000). z-test + Welch's t-test + 95% CI + Cohen's h. Скрипт: scripts/ab_test_analysis.py",
   },
 ];
 
@@ -239,13 +239,13 @@ export const experience: ExperienceItem[] = [
   {
     role: "Data Analyst (Pet-проекты / Фриланс)",
     company: "Самозанятость",
-    period: "2024 — настоящее время",
+    period: "2026 — настоящее время",
     location: "Удалённо (Россия)",
     description:
-      "Сквозные аналитические исследования на реальных открытых датасетах (Telco Churn, Olist E-commerce, A/B-тесты). Полный цикл: SQL-выгрузки с Window functions/CTE → feature engineering в pandas → ML-модель (XGBoost) с кросс-валидацией → статистическая проверка гипотез → дашборд в Power BI.",
+      "Сквозные аналитические исследования на реальных открытых датасетах (Telco Churn, Olist E-commerce, A/B-тесты). Полный цикл: SQL-выгрузки с Window functions/CTE → feature engineering в pandas → ML-модель (XGBoost) с кросс-валидацией → статистическая проверка гипотез → воспроизводимые скрипты, ноутбук с графиками и JSON-результаты.",
     achievements: [
       "Прогнозирование оттока клиентов (Telco Churn): Разработал ML-модель на базе XGBoost для прогнозирования ухода клиентов. Достиг ROC-AUC 0.84 на кросс-валидации. Выявил ключевые факторы оттока (тип контракта, срок обслуживания). Бизнес-результат: обнаружил, что у новых клиентов (0-6 мес) отток составляет 53%, что позволило сформулировать рекомендации по снижению потерь.",
-      "Анализ продуктовых метрик (E-commerce): Собрал сквозную аналитику на основе датасета Olist. Написал сложные SQL-запросы (JOIN, Window functions, CTE) для расчета Retention, LTV и AOV. Построил интерактивный дашборд в Power BI для отслеживания воронки продаж.",
+      "Анализ продуктовых метрик (E-commerce): Собрал сквозную аналитику на основе датасета Olist. Написал сложные SQL-запросы (JOIN, Window functions, CTE) для расчета Retention, LTV и AOV. Оформил результаты в воспроизводимые скрипты и ноутбук с графиками.",
       "Проведение A/B-теста: Спроектировал и провел статистический анализ результатов A/B-теста (t-test, расчет p-value, доверительных интервалов). Подтвердил статистическую значимость изменений и оценил потенциальный прирост конверсии.",
     ],
     stack: ["Python (pandas, scikit-learn)", "SQL (PostgreSQL)", "Power BI", "Git", "A/B-тестирование"],
@@ -263,7 +263,7 @@ export const education = {
 export const courses = [
   {
     name: "Самостоятельное изучение материалов курса МФТИ по аналитике данных",
-    period: "2024 — 2026",
+    period: "2026",
     issuer: "МФТИ (Московский физико-технический институт)",
     note: "Неофициальное изучение открытых материалов курса. Документ об окончании не получал.",
   },
